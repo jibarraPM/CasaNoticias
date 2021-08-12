@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserNoticiaController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,11 @@ Route::middleware('auth')->group(function() {
     Route::get('/user', [UserController::class, 'index'])->name('index');
     Route::get('/user/noticia/create', [UserNoticiaController::class, 'create'])->name('create');
     Route::get('/user/noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
+
+    /*
+    INTERFACES DE ADMINISTRADOR
+    */
+    Route::get('/admin', [AdminController::class, 'index'])->name('index');
     
 
 

@@ -2,7 +2,7 @@
 
 namespace App\Main;
 
-class SideMenu
+class SideMenuAdmin
 {
     /**
      * List of side menu items.
@@ -15,7 +15,7 @@ class SideMenu
         return [
             'dashboard' => [
                 'icon' => 'home',
-                'title' => 'Noticias',
+                'title' => 'Dashboard',
                 'sub_menu' => [
                     'dashboard-overview-1' => [
                         'icon' => '',
@@ -23,7 +23,7 @@ class SideMenu
                         'params' => [
                             'layout' => 'side-menu',
                         ],
-                        'title' => 'Crear Noticia'
+                        'title' => 'Overview 1'
                     ],
                     'dashboard-overview-2' => [
                         'icon' => '',
