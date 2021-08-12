@@ -15,10 +15,6 @@ class UserController extends Controller
     public function index()
     {
         return view('user/index', [
-            // Specify the base layout.
-            // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
-            // The default value is 'side-menu'
-
             'layout' => 'side-menu-user'
         ]);
     }
