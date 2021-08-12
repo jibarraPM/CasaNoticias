@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +93,11 @@ Route::middleware('auth')->group(function() {
     */
 
     Route::get('/user', [UserController::class, 'index'])->name('index');
+
+    /*
+    INTERFACES DE ADMINISTRADOR
+    */
+    Route::get('/admin', [AdminController::class, 'index'])->name('index');
     
 
 

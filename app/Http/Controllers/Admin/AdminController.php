@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\Controller;
 
-class PageController extends Controller
+class AdminController extends Controller
 {
     /**
      * Show specified view.
@@ -12,16 +12,8 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function dashboardOverview1()
+    public function index()
     {
-        // return view('pages/dashboard-overview-1', [
-        //     // Specify the base layout.
-        //     // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
-        //     // The default value is 'side-menu'
-
-        //     // 'layout' => 'side-menu'
-        // ]);
-
         return view('admin/noticias/index', [
             // Specify the base layout.
             // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
