@@ -32,7 +32,7 @@ Route::middleware('loggedin')->group(function() {
 
 
 
-/**
+
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     
@@ -108,7 +108,6 @@ Route::middleware('auth')->group(function() {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-*/
 
 Route::get('/admin', [AdminController::class, 'index'])->name('index');
 
