@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\UserNoticiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +93,8 @@ Route::middleware('auth')->group(function() {
     */
 
     Route::get('/user', [UserController::class, 'index'])->name('index');
+    Route::get('/user/noticia/create', [UserNoticiaController::class, 'create'])->name('create');
+    Route::get('/user/noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
     
 
 
