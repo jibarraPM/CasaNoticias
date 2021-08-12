@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
+use App\Http\Controllers\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,4 +86,13 @@ Route::middleware('auth')->group(function() {
     Route::get('chart-page', [PageController::class, 'chart'])->name('chart');
     Route::get('slider-page', [PageController::class, 'slider'])->name('slider');
     Route::get('image-zoom-page', [PageController::class, 'imageZoom'])->name('image-zoom');
+
+    /*
+    INTEFACES DE USUARIO
+    */
+
+    Route::get('/user', [UserController::class, 'index'])->name('index');
+    
+
+
 });
