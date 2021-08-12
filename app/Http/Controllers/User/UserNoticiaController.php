@@ -15,11 +15,7 @@ class UserNoticiaController extends Controller
     public function index()
     {
         return view('user/noticia/index', [
-            // Specify the base layout.
-            // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
-            // The default value is 'side-menu'
-
-            // 'layout' => 'side-menu'
+            'layout' => 'side-menu-user'
         ]);
     }
 
@@ -31,7 +27,9 @@ class UserNoticiaController extends Controller
      */
     public function create()
     {
-        return view('user/noticia/create');
+        return view('user/noticia/create',[
+            'layout' => 'side-menu-user'
+        ]);
     }
 
     /**
@@ -42,7 +40,9 @@ class UserNoticiaController extends Controller
      */
     public function edit()
     {
-        return view('user/noticia/edit');
+        return view('user/noticia/edit',[
+            'layout' => 'side-menu-user'
+        ]);
     }
 
     /**

@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\User\UserNoticiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,10 @@ use App\Http\Controllers\Admin\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
+Route::get('login-page', [PageController::class, 'login'])->name('login');
+Route::get('register-page', [PageController::class, 'register'])->name('register');
 
 Route::middleware('loggedin')->group(function() {
     Route::get('login', [AuthController::class, 'loginView'])->name('login-view');
@@ -32,7 +35,7 @@ Route::middleware('loggedin')->group(function() {
 /**
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+    
     Route::get('dashboard-overview-2-page', [PageController::class, 'dashboardOverview2'])->name('dashboard-overview-2');
     Route::get('dashboard-overview-3-page', [PageController::class, 'dashboardOverview3'])->name('dashboard-overview-3');
     Route::get('inbox-page', [PageController::class, 'inbox'])->name('inbox');
@@ -62,8 +65,7 @@ Route::middleware('auth')->group(function() {
     Route::get('faq-layout-1-page', [PageController::class, 'faqLayout1'])->name('faq-layout-1');
     Route::get('faq-layout-2-page', [PageController::class, 'faqLayout2'])->name('faq-layout-2');
     Route::get('faq-layout-3-page', [PageController::class, 'faqLayout3'])->name('faq-layout-3');
-    Route::get('login-page', [PageController::class, 'login'])->name('login');
-    Route::get('register-page', [PageController::class, 'register'])->name('register');
+
     Route::get('error-page-page', [PageController::class, 'errorPage'])->name('error-page');
     Route::get('update-profile-page', [PageController::class, 'updateProfile'])->name('update-profile');
     Route::get('change-password-page', [PageController::class, 'changePassword'])->name('change-password');
@@ -109,9 +111,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 */
 
 Route::get('/admin', [AdminController::class, 'index'])->name('index');
-Route::get('/user', [UserController::class, 'index'])->name('index');
-Route::get('/user/noticia/create', [UserNoticiaController::class, 'create'])->name('create');
-Route::get('/user/noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
+
+
 
 
 Route::group([
@@ -138,4 +139,7 @@ Route::group([
 ], function ($router) {
     Route::get('/', [UserController::class, 'index']);
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard-user');
+    Route::get('noticia', [UserController::class, 'index'])->name('index');
+    Route::get('noticia/create', [UserNoticiaController::class, 'create'])->name('create');
+    Route::get('noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
 });
