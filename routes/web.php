@@ -139,7 +139,7 @@ Route::group([
 ], function ($router) {
     Route::get('/', [UserController::class, 'index']);
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard-user');
-    Route::get('noticia', [UserController::class, 'index'])->name('index');
+    Route::get('noticia', [UserNoticiaController::class, 'index'])->name('index');
     Route::get('noticia/create', [UserNoticiaController::class, 'create'])->name('create');
     Route::get('noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
 });
