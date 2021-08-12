@@ -14,11 +14,11 @@
             <div class="intro-y box p-5">
                 <div>
                     <label for="titulo" class="form-label">Título</label>
-                    <input id="titulo" type="text" class="form-control w-full" placeholder="Ingrese título de noticia">
+                    <input id="titulo" name="titulo" type="text" class="form-control w-full" placeholder="Ingrese título de noticia">
                 </div>
                 <div class="mt-3">
                     <label for="categorias" class="form-label">Categorías</label>
-                    <select data-placeholder="Select your favorite actors" class="tom-select w-full" id="categorias" multiple>
+                    <select data-placeholder="Select your favorite actors" class="tom-select w-full" id="categorias" name="categorias" multiple>
                         <option value="1" selected>Políticas</option>
                         <option value="2">Deportivas</option>
                         <option value="3" selected>Económicas</option>
@@ -28,14 +28,14 @@
                 <div class="mt-3">
                     <label for="entrada" class="form-label">Entrada</label>
                     <div class="input-group">
-                        <input id="entrada" type="text" class="form-control" placeholder="Ingrese los datos más relevantes de la noticia." aria-describedby="input-group-2">
+                        <input id="entrada" name="entrada" type="text" class="form-control" placeholder="Ingrese los datos más relevantes de la noticia." aria-describedby="input-group-2">
                     </div>
                 </div>
                 <div class="mt-3">
                     <label>Cuerpo</label>
                     <div class="mt-2">
                         <div data-simple-toolbar="true" class="editor">
-                            <p>Ingrese el cuerpo de la noticia.</p>
+                            <textarea name="cuerpo" id="cuerpo" cols="30" rows="10" placeholder="Ingrese el cuerpo de la noticia." ></textarea>
                         </div>
                     </div>
                 </div>
@@ -63,27 +63,6 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="source-code hidden">
-                                <div class="overflow-y-auto mt-3 rounded-md">
-                                    <pre id="copy-multiple-file-upload" class="source-preview">
-                                        <code class="text-xs p-0 rounded-md html pl-5 pt-8 pb-4 -mb-10 -mt-10">
-                                            {{ \Hp::formatCode('
-                                                <form action="/file-upload" class="dropzone">
-                                                    <div class="fallback">
-                                                        <input name="file" type="file" multiple/>
-                                                    </div>
-                                                    <div class="dz-message" data-dz-message>
-                                                        <div class="text-lg font-medium">Drop files here or click to upload.</div>
-                                                        <div class="text-gray-600">
-                                                            This is just a demo dropzone. Selected files are <span class="font-medium">not</span> actually uploaded.
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            ') }}
-                                        </code>
-                                    </pre>
-                                </div>
                             </div>
                         </div>
                     </div>
