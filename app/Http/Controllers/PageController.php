@@ -27,7 +27,7 @@ class PageController extends Controller
             // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
             // The default value is 'side-menu'
 
-            // 'layout' => 'side-menu'
+             'layout' => 'side-menu-admin'
         ]);
     }
 
@@ -39,7 +39,13 @@ class PageController extends Controller
      */
     public function dashboardOverview2()
     {
-        return view('pages/dashboard-overview-2');
+        return view('pages/dashboard-overview-2', [
+            // Specify the base layout.
+            // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
+            // The default value is 'side-menu'
+
+             'layout' => 'side-menu'
+        ]);
     }
 
     /**

@@ -6,6 +6,8 @@ use Illuminate\View\View;
 use App\Main\TopMenu;
 use App\Main\SideMenu;
 use App\Main\SimpleMenu;
+use App\Main\SideMenuAdmin;
+use App\Main\SideMenuUser;
 
 class MenuComposer
 {
@@ -23,6 +25,8 @@ class MenuComposer
 
         $view->with('top_menu', TopMenu::menu());
         $view->with('side_menu', SideMenu::menu());
+        $view->with('side_menu_admin', SideMenuAdmin::menu());
+        $view->with('side_menu_user', SideMenuUser::menu());
         $view->with('simple_menu', SimpleMenu::menu());
         $view->with('first_level_active_index', $activeMenu['first_level_active_index']);
         $view->with('second_level_active_index', $activeMenu['second_level_active_index']);
@@ -86,12 +90,35 @@ class MenuComposer
                     }
                 }
             }
-        } else if ($layout == 'simple-menu') {
-            foreach (SimpleMenu::menu() as $menuKey => $menu) {
+        } else if ($layout == 'side-menu-admin') {
+            foreach (SideMenuAdmin::menu() as $menuKey => $menu) {
                 if ($menu !== 'devider' && isset($menu['route_name']) && $menu['route_name'] == $pageName && empty($firstPageName)) {
                     $firstLevelActiveIndex = $menuKey;
                 }
+                if (isset($menu['sub_menu'])) {
+                    foreach ($menu['sub_menu'] as $subMenuKey => $subMenu) {
+                        if (isset($subMenu['route_name']) && $subMenu['route_name'] == $pageName && $menuKey != 'menu-layout' && empty($secondPageName)) {
+                            $firstLevelActiveIndex = $menuKey;
+                            $secondLevelActiveIndex = $subMenuKey;
+                        }
 
+                        if (isset($subMenu['sub_menu'])) {
+                            foreach ($subMenu['sub_menu'] as $lastSubMenuKey => $lastSubMenu) {
+                                if (isset($lastSubMenu['route_name']) && $lastSubMenu['route_name'] == $pageName) {
+                                    $firstLevelActiveIndex = $menuKey;
+                                    $secondLevelActiveIndex = $subMenuKey;
+                                    $thirdLevelActiveIndex = $lastSubMenuKey;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else if ($layout == 'side-menu-user') {
+            foreach (SideMenuUser::menu() as $menuKey => $menu) {
+                if ($menu !== 'devider' && isset($menu['route_name']) && $menu['route_name'] == $pageName && empty($firstPageName)) {
+                    $firstLevelActiveIndex = $menuKey;
+                }
                 if (isset($menu['sub_menu'])) {
                     foreach ($menu['sub_menu'] as $subMenuKey => $subMenu) {
                         if (isset($subMenu['route_name']) && $subMenu['route_name'] == $pageName && $menuKey != 'menu-layout' && empty($secondPageName)) {
