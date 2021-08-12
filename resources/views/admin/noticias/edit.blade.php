@@ -1,12 +1,12 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Caza Noticias - Agregar Noticia</title>
+    <title>Caza Noticias - Editar Noticia</title>
 @endsection
 
 @section('subcontent')
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium mr-auto">Agregar Noticia</h2>
+        <h2 class="text-lg font-medium mr-auto">Editar Noticia</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-6">
@@ -25,14 +25,25 @@
                         <option value="4">Culturales</option>
                     </select>
                 </div>
-
+                <div class="mt-3">
+                    <label for="valoracion" class="form-label">Valoración</label>
+                    <div class="input-group">
+                        <input id="valoracion" type="number" class="form-control" placeholder="Ingrese un valor de 1 a 5" aria-describedby="input-group-1" max="5" min="1">
+                        <div id="input-group-1" class="input-group-text"><i data-feather="star"></i></div>
+                    </div>
+                </div>
                 <div class="mt-3">
                     <label for="entrada" class="form-label">Entrada</label>
                     <div class="input-group">
                         <input id="entrada" type="text" class="form-control" placeholder="Ingrese los datos más relevantes de la noticia." aria-describedby="input-group-2">
                     </div>
                 </div>
-
+                <div class="mt-3">
+                    <label>Estado</label>
+                    <div class="mt-2">
+                        <input type="checkbox" class="form-check-switch" id="estado">
+                    </div>
+                </div>
                 <div class="mt-3">
                     <label>Cuerpo</label>
                     <div class="mt-2">

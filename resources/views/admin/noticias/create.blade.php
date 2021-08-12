@@ -25,14 +25,25 @@
                         <option value="4">Culturales</option>
                     </select>
                 </div>
-
+                <div class="mt-3">
+                    <label for="valoracion" class="form-label">Valoración</label>
+                    <div class="input-group">
+                        <input id="valoracion" type="number" class="form-control" placeholder="Ingrese un valor de 1 a 5" aria-describedby="input-group-1" max="5" min="1">
+                        <div id="input-group-1" class="input-group-text"><i data-feather="star"></i></div>
+                    </div>
+                </div>
                 <div class="mt-3">
                     <label for="entrada" class="form-label">Entrada</label>
                     <div class="input-group">
                         <input id="entrada" type="text" class="form-control" placeholder="Ingrese los datos más relevantes de la noticia." aria-describedby="input-group-2">
                     </div>
                 </div>
-
+                <div class="mt-3">
+                    <label>Estado</label>
+                    <div class="mt-2">
+                        <input type="checkbox" class="form-check-switch" id="estado">
+                    </div>
+                </div>
                 <div class="mt-3">
                     <label>Cuerpo</label>
                     <div class="mt-2">
