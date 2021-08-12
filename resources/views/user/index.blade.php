@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Casa Noticas - User</title>
+    <title>Caza Noticas - User</title>
 @endsection
 
 @section('subcontent')
@@ -11,9 +11,9 @@
                 <!-- BEGIN: General Report -->
                 <div class="col-span-12 mt-8">
                     <div class="intro-y flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">General Report</h2>
+                        <h2 class="text-lg font-medium truncate mr-5">Reporte General</h2>
                         <a href="" class="ml-auto flex items-center text-theme-1 dark:text-theme-10">
-                            <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data
+                            <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Recargar Datos
                         </a>
                     </div>
                     <div class="grid grid-cols-12 gap-6 mt-5">
@@ -21,15 +21,13 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-feather="shopping-cart" class="report-box__icon text-theme-10"></i>
+                                        <i data-feather="file-text" class="report-box__icon text-theme-10"></i>
                                         <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">
-                                                33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
+
                                         </div>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
-                                    <div class="text-base text-gray-600 mt-1">Item Sales</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6">5</div>
+                                    <div class="text-base text-gray-600 mt-1">Noticias</div>
                                 </div>
                             </div>
                         </div>
