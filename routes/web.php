@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::middleware('loggedin')->group(function() {
     Route::post('register', [AuthController::class, 'register'])->name('register');
 });
 
+
+
+/**
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
@@ -87,12 +91,42 @@ Route::middleware('auth')->group(function() {
     Route::get('slider-page', [PageController::class, 'slider'])->name('slider');
     Route::get('image-zoom-page', [PageController::class, 'imageZoom'])->name('image-zoom');
 
-    /*
-    INTEFACES DE USUARIO
-    */
+
 
     Route::get('/user', [UserController::class, 'index'])->name('index');
     
 
 
+});
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+*/
+
+
+Route::group([
+    'middleware' => ['auth']
+], function ($router) {
+    //Index
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+Route::group([
+    'middleware' => ['auth', 'admin'],
+    'prefix' => 'admin'
+], function ($router) {
+    //Index
+    Route::get('/', [AdminController::class, 'index']);
+    Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard-admin');
+    Route::get('dashboard-1', [AdminController::class, 'dashboardOverview2'])->name('dashboard-admin-2');
+    Route::get('dashboard-2', [AdminController::class, 'dashboardOverview3'])->name('dashboard-admin-3');
+});
+
+Route::group([
+    'middleware' => ['auth', 'user'],
+    'prefix' => 'user'
+], function ($router) {
+    Route::get('/', [UserController::class, 'index']);
+    Route::get('dashboard', [UserController::class, 'index'])->name('dashboard-user');
 });
