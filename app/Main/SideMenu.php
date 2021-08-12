@@ -15,7 +15,7 @@ class SideMenu
         return [
             'dashboard' => [
                 'icon' => 'home',
-                'title' => 'Dashboard',
+                'title' => 'Noticias',
                 'sub_menu' => [
                     'dashboard-overview-1' => [
                         'icon' => '',
@@ -23,7 +23,7 @@ class SideMenu
                         'params' => [
                             'layout' => 'side-menu',
                         ],
-                        'title' => 'Overview 1'
+                        'title' => 'Crear Noticia'
                     ],
                     'dashboard-overview-2' => [
                         'icon' => '',

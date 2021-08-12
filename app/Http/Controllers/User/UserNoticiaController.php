@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\User\Controller;
 
-class PageController extends Controller
+class UserNoticiaController extends Controller
 {
     /**
      * Show specified view.
@@ -12,22 +12,14 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function dashboardOverview1()
+    public function index()
     {
-        // return view('pages/dashboard-overview-1', [
-        //     // Specify the base layout.
-        //     // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
-        //     // The default value is 'side-menu'
-
-        //     // 'layout' => 'side-menu'
-        // ]);
-
-        return view('admin/noticias/index', [
+        return view('user/noticia/index', [
             // Specify the base layout.
             // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
             // The default value is 'side-menu'
 
-             'layout' => 'side-menu-admin'
+            // 'layout' => 'side-menu'
         ]);
     }
 
@@ -37,15 +29,9 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function dashboardOverview2()
+    public function create()
     {
-        return view('pages/dashboard-overview-2', [
-            // Specify the base layout.
-            // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
-            // The default value is 'side-menu'
-
-             'layout' => 'side-menu'
-        ]);
+        return view('user/noticia/create');
     }
 
     /**
@@ -54,9 +40,9 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function dashboardOverview3()
+    public function edit()
     {
-        return view('pages/dashboard-overview-3');
+        return view('user/noticia/edit');
     }
 
     /**
