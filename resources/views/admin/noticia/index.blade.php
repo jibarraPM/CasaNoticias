@@ -50,36 +50,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (array_slice($fakers, 0, 9) as $faker)
+                    @foreach ($noticias as $noticia)
                         <tr class="intro-x">
                             <td class="w-40">
                                 <div class="flex">
                                     <div class="w-10 h-10 image-fit zoom-in">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][0]) }}" title="Uploaded at {{ $faker['dates'][0] }}">
+                                        <img  class="tooltip rounded-full"  title="Uploaded at 20-20">
                                     </div>
                                     <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][1]) }}" title="Uploaded at {{ $faker['dates'][0] }}">
+                                        <img  class="tooltip rounded-full"  title="Uploaded at 20-20" >
                                     </div>
                                     <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][2]) }}" title="Uploaded at {{ $faker['dates'][0] }}">
+                                        <img  class="tooltip rounded-full"  title="Uploaded at 20-20">
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <a href="" class="font-medium whitespace-nowrap">{{ $faker['products'][0]['name'] }}</a>
-                                <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">{{ $faker['products'][0]['category'] }}</div>
+                                <a href="" class="font-medium whitespace-nowrap">{{$noticia->titulo}}</a>
+                                <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">{{$noticia->entrada}}</div>
                             </td>
-                            <td class="text-center">{{ $faker['users'][0]['name'] }}</td>
-                            <td class="text-center">{{ $faker['stocks'][0] }}</td>
+                            <td class="text-center">pedro</td>
+                            <td class="text-center">{{$noticia->valoracion}}</td>
                             <td class="w-40">
-                                <div class="flex items-center justify-center {{ $faker['true_false'][0] ? 'text-theme-9' : 'text-theme-6' }}">
-                                    <i data-feather="{{ $faker['true_false'][0] ? 'check-square' : 'check-square' }}" class="w-4 h-4 mr-2"></i> {{ $faker['true_false'][0] ? 'Aprobada' : 'Rechazada' }}
+                                <div class="flex items-center justify-center">
+                                    <i  class="w-4 h-4 mr-2"></i> aprobada
                                 </div>
                             </td>
                             <td class="table-report__action w-56">
                                 <div class="flex justify-center items-center">
-                                    <a class="flex items-center mr-3" href="javascript:;">
-                                        <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Editar
+                                    
+                                    <a class="flex items-center mr-3" href="{{ route('admin-noticia.edit',$noticia->id) }}">
+                                        <i data-feather="check-square" class="w-4 h-4 mr-1" ></i> Editar
                                     </a>
                                     <a class="flex items-center text-theme-6" href="javascript:;" data-toggle="modal" data-target="#delete-confirmation-modal">
                                         <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Borrar

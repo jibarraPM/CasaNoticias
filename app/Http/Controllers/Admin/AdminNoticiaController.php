@@ -15,7 +15,10 @@ class AdminNoticiaController extends Controller
      */
     public function index()
     {
-        //
+        $noticias = Noticia::all();
+        return view('admin/noticia/index',[
+            'layout' => 'side-menu-admin'
+        ], compact('noticias'));
     }
 
     /**

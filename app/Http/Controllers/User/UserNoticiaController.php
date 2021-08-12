@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\User\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 use App\Models\Noticia;
 
@@ -43,6 +42,7 @@ class UserNoticiaController extends Controller
      */
     public function edit()
     {
+
         return view('user/noticia/edit',[
             'layout' => 'side-menu-user'
         ]);

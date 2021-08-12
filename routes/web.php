@@ -33,7 +33,7 @@ Route::middleware('loggedin')->group(function() {
 
 
 
-/**
+
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     
@@ -109,7 +109,7 @@ Route::middleware('auth')->group(function() {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-*/
+
 
 Route::get('/admin', [AdminController::class, 'index'])->name('index');
 
@@ -132,7 +132,7 @@ Route::group([
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard-admin');
     Route::get('dashboard-1', [AdminController::class, 'dashboardOverview2'])->name('dashboard-admin-2');
     Route::get('dashboard-2', [AdminController::class, 'dashboardOverview3'])->name('dashboard-admin-3');
-    Route::resource('noticia', AdminNoticiaController::class);
+    Route::resource('admin-noticia', AdminNoticiaController::class);
 });
 
 Route::group([
