@@ -14,7 +14,7 @@
             <div class="intro-y box p-5">
                 <div>
                     <label for="titulo" class="form-label">Título</label>
-                    <input id="titulo" type="text" class="form-control w-full" placeholder="Ingrese título de noticia">
+                    <input id="titulo" type="text" class="form-control w-full" value="{{ $noticia[0]->titulo }}" >
                 </div>
                 <div class="mt-3">
                     <label for="categorias" class="form-label">Categorías</label>
@@ -28,14 +28,14 @@
                 <div class="mt-3">
                     <label for="valoracion" class="form-label">Valoración</label>
                     <div class="input-group">
-                        <input id="valoracion" type="number" class="form-control" placeholder="Ingrese un valor de 1 a 5" aria-describedby="input-group-1" max="5" min="1">
+                        <input id="valoracion" type="number" class="form-control" value="{{ $noticia[0]->valoracion }}" aria-describedby="input-group-1" max="5" min="1">
                         <div id="input-group-1" class="input-group-text"><i data-feather="star"></i></div>
                     </div>
                 </div>
                 <div class="mt-3">
                     <label for="entrada" class="form-label">Entrada</label>
                     <div class="input-group">
-                        <input id="entrada" type="text" class="form-control" placeholder="Ingrese los datos más relevantes de la noticia." aria-describedby="input-group-2">
+                        <input id="entrada" type="text" class="form-control" value="{{ $noticia[0]->entrada }}" aria-describedby="input-group-2">
                     </div>
                 </div>
                 <div class="mt-3">
@@ -48,14 +48,14 @@
                     <label>Cuerpo</label>
                     <div class="mt-2">
                         <div data-simple-toolbar="true" class="editor">
-                            <p>Ingrese el cuerpo de la noticia.</p>
+                            <p>{{ $noticia[0]->cuerpo }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="mt-3">
                     <label for="cierre" class="form-label">Cierre</label>
                     <div class="input-group">
-                        <input id="cierre" type="text" class="form-control" placeholder="Ingrese ideas secundarias o información suplementaria." aria-describedby="input-group-2">
+                        <input id="cierre" type="text" class="form-control" value="{{ $noticia[0]->cierre }}" aria-describedby="input-group-2">
                     </div>
                 </div>
                 <div class="mt-3">

@@ -7,6 +7,7 @@ use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\User\UserNoticiaController;
+use App\Http\Controllers\Admin\AdminNoticiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,6 +110,7 @@ Route::middleware('auth')->group(function() {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
 Route::get('/admin', [AdminController::class, 'index'])->name('index');
 
 
@@ -130,6 +132,7 @@ Route::group([
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard-admin');
     Route::get('dashboard-1', [AdminController::class, 'dashboardOverview2'])->name('dashboard-admin-2');
     Route::get('dashboard-2', [AdminController::class, 'dashboardOverview3'])->name('dashboard-admin-3');
+    Route::resource('admin-noticia', AdminNoticiaController::class);
 });
 
 Route::group([
@@ -138,7 +141,8 @@ Route::group([
 ], function ($router) {
     Route::get('/', [UserController::class, 'index']);
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard-user');
-    Route::get('noticia', [UserNoticiaController::class, 'index'])->name('index');
-    Route::get('noticia/create', [UserNoticiaController::class, 'create'])->name('create');
-    Route::get('noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
+    Route::resource('noticia', UserNoticiaController::class);
+    //Route::get('noticia', [UserController::class, 'index'])->name('index');
+    //Route::get('noticia/create', [UserNoticiaController::class, 'create'])->name('create');
+    //Route::get('noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
 });

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\User\Controller;
 
+use App\Models\Noticia;
+
 class UserNoticiaController extends Controller
 {
     /**
@@ -40,7 +42,30 @@ class UserNoticiaController extends Controller
      */
     public function edit()
     {
+
         return view('user/noticia/edit',[
+            'layout' => 'side-menu-user'
+        ]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $noticia = new Noticia();
+        $noticia->titulo = $request->get('titulo');
+        $noticia->entrada = $request->get('entrada');
+        $noticia->cuerpo = $request->get('cuerpo');
+        $noticia->cierre = $request->get('cierre');
+        $noticia->estado = 0;
+        $noticia->valoracion = 0;
+        $noticia->save();
+
+        return view('user/noticia/create',[
             'layout' => 'side-menu-user'
         ]);
     }
