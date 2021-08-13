@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\AdminNoticiaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 Route::get('login-page', [PageController::class, 'login'])->name('login');
 Route::get('register-page', [PageController::class, 'register'])->name('register');
@@ -100,10 +100,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/user/noticia/create', [UserNoticiaController::class, 'create'])->name('create');
     Route::get('/user/noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');
 
-
     Route::get('/admin', [AdminController::class, 'index'])->name('index');
-    
-
 
 });
 
@@ -130,9 +127,7 @@ Route::group([
     //Index
     Route::get('/', [AdminController::class, 'index']);
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard-admin');
-    Route::get('dashboard-1', [AdminController::class, 'dashboardOverview2'])->name('dashboard-admin-2');
-    Route::get('dashboard-2', [AdminController::class, 'dashboardOverview3'])->name('dashboard-admin-3');
-    Route::resource('admin-noticia', AdminNoticiaController::class);
+    Route::resource('adminNoticia', AdminNoticiaController::class);
 });
 
 Route::group([
@@ -141,7 +136,7 @@ Route::group([
 ], function ($router) {
     Route::get('/', [UserController::class, 'index']);
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard-user');
-    Route::resource('noticia', UserNoticiaController::class);
+    Route::resource('userNoticia', UserNoticiaController::class);
     //Route::get('noticia', [UserController::class, 'index'])->name('index');
     //Route::get('noticia/create', [UserNoticiaController::class, 'create'])->name('create');
     //Route::get('noticia/edit', [UserNoticiaController::class, 'edit'])->name('edit');

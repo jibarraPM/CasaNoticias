@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\User\Controller;
+use Illuminate\Http\Request;
 
 use App\Models\Noticia;
 
