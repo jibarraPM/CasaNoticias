@@ -130,12 +130,14 @@ Route::group([
     Route::resource('adminNoticia', AdminNoticiaController::class);
 });
 
+
+//RUTAS PARA LA INTERFAZ DEL USUARIO, TODO LO QUE ESTA ADENTRO TIENE QUE ESTAR LOGEADO PARA VERLO
+
 Route::group([
     'middleware' => ['auth', 'user'],
     'prefix' => 'user'
 ], function ($router) {
-    Route::get('/', [UserController::class, 'index']);
-    Route::get('dashboard', [UserController::class, 'index'])->name('dashboard-user');
+    Route::get('/index', [UserController::class, 'index']);
     Route::resource('userNoticia', UserNoticiaController::class);
     //Route::get('noticia', [UserController::class, 'index'])->name('index');
     //Route::get('noticia/create', [UserNoticiaController::class, 'create'])->name('create');

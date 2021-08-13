@@ -13,17 +13,15 @@ class SideMenuUser
     public static function menu()
     {
         return [
-            'dashboard' => [
+            'Inicio' => [
                 'icon' => 'home',
-                'title' => 'Dashboard-user',
-                'sub_menu' => [
-                    'dashboard-overview-1' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-user',
-                        'title' => 'Overview 1'
-                    ]
-                ]
+                'route_name' => 'index',
+                'params' => [
+                    'layout' => 'simple-menu-user'
+                ],
+                'title' => 'Inicio'
             ],
+            
         ];
     }
 }

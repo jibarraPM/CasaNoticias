@@ -2,9 +2,9 @@
 <div class="top-bar">
     <!-- BEGIN: Breadcrumb -->
     <div class="-intro-x breadcrumb mr-auto hidden sm:flex">
-        <a href="">Application</a>
+        <a href="">Aplicación</a>
         <i data-feather="chevron-right" class="breadcrumb__icon"></i>
-        <a href="" class="breadcrumb--active">Dashboard</a>
+        <a href="" class="breadcrumb--active">Inicio</a>
     </div>
     <!-- END: Breadcrumb -->
     <!-- BEGIN: Search -->

@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Caza Noticas - User</title>
+    <title>Caza Noticas - User Home</title>
 @endsection
 
 @section('subcontent')
@@ -27,7 +27,7 @@
                                         </div>
                                     </div>
                                     <div class="text-3xl font-medium leading-8 mt-6">5</div>
-                                    <div class="text-base text-gray-600 mt-1">Noticias</div>
+                                    <div class="text-base text-gray-600 mt-1">Total de Noticias</div>
                                 </div>
                             </div>
                         </div>
@@ -35,15 +35,10 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="2% Lower than last month">
-                                                2% <i data-feather="chevron-down" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
+                                        <i data-feather="star" class="report-box__icon text-theme-11"></i>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">3.721</div>
-                                    <div class="text-base text-gray-600 mt-1">New Orders</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6">4.2</div>
+                                    <div class="text-base text-gray-600 mt-1">Promedio Valoraciones</div>
                                 </div>
                             </div>
                         </div>
@@ -52,14 +47,9 @@
                                 <div class="box p-5">
                                     <div class="flex">
                                         <i data-feather="monitor" class="report-box__icon text-theme-12"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="12% Higher than last month">
-                                                12% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
-                                    <div class="text-base text-gray-600 mt-1">Total Products</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6">1</div>
+                                    <div class="text-base text-gray-600 mt-1">En Revision</div>
                                 </div>
                             </div>
                         </div>
