@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\AdminNoticiaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+Route::get('/', [PageController::class, 'dashboardOverview1']);
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 Route::get('login-page', [PageController::class, 'login'])->name('login');
 Route::get('register-page', [PageController::class, 'register'])->name('register');
